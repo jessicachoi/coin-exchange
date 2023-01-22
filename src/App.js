@@ -4,6 +4,7 @@ import AccountBalance from './components/AccountBalance/AccountBalance';
 import ExchangeHeader from './components/ExchangeHeader/ExchangeHeader';
 import styled from 'styled-components';
 
+
 const Div = styled.div`
   text-align: center;
   background-color: rgb(20, 56, 97);
@@ -48,8 +49,8 @@ class App extends React.Component {
       }
     ]
   }
-
-
+  
+  
   handleBalanceVisibilityChange = () => {
     this.setState( function(oldState) {
       return {
@@ -58,6 +59,7 @@ class App extends React.Component {
       }
     });
   }
+  
   handleRefresh = (valueChangeTicker) => {
     const newCoinData = this.state.coinData.map( function( values ) {
       let newValues = { ...values };
@@ -67,7 +69,7 @@ class App extends React.Component {
       }
       return newValues;
     });
-    
+    this.setState( { coinData: newCoinData } );
   }
 
 
@@ -77,8 +79,9 @@ class App extends React.Component {
         <ExchangeHeader />
         <AccountBalance 
           amount={this.state.balance} 
-          showBalance={this.state.showBalance} 
-          handleBalanceVisibilityChange={this.handleBalanceVisibilityChange} />
+          showBalance={this.state.showBalance}
+          handleBalanceVisibilityChange={this.handleBalanceVisibilityChange}
+           />
         <CoinList 
           coinData={this.state.coinData} 
           showBalance={this.state.showBalance}

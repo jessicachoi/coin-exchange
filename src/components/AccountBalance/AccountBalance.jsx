@@ -13,7 +13,7 @@ export default class AccountBalance extends Component {
     const buttonText = this.props.showBalance ? 'Hide Balance' : 'Show Balance';
     let content = null;
     if ( this.props.showBalance ) {
-        content = <>Balance: ${this.props.amount}</>
+        content = <>Balance: ${this.props.amount}</>;
     }
     return (
       <Section>

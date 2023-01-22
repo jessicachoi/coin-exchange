@@ -9,7 +9,7 @@ const Td = styled.td`
 
 
 export default class Coin extends Component {
-   
+    
     handleClick = (event) => {
         // Prevent the default action of submitting the form
         event.preventDefault();
